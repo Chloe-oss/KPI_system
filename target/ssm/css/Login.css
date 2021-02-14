@@ -1,0 +1,77 @@
+/* 登陆页面 Login的页面设计 */
+/* 背景布局：多张图片或视频动态播放，下滑有其他页面，登录的基本框架（账号名、密码） */
+/* 登录：
+    1.在没有点击之前，文本框有深灰色边，填充白色透明度80%；点击输入时，透明度为20%
+    2.文本框下一行有提示语（红色），格式正确会显示 “✔”，格式错误会显示 “×”
+    3.点击登录错误会显示验证信息（红色）
+*/
+body{
+    margin: 0;/* 边距属性：盒子的四个边距 */
+    padding: 0;/* 填充属性：上、右、下、左 */
+    background: url("/images/login_background.jpg");/* 背景图 */
+    font-family: sans-serif; /* 字体设置 */
+    background-size: cover; /* 背景图位置：覆盖 */
+}
+/* 登录框： */
+.box{
+    position: absolute;/* 绝对位置：居中 */
+    top: 50%; /* 垂直位置 */
+    left: 50%; /* 水平位置 */
+    /*transform: translate(-50%,-50%);*//* transform：元素的2D或3D转换，translate是2D转换 */
+    width: 400px;
+    padding: 30px;/* 填充属性：各元素在登录框的填充程度 */
+    background: rgba(244,247,247,.7);/*rgba(red,green,blur,透明度);*/
+    box-sizing: border-box;
+    border-radius: 10px;/* 边框圆角 */
+}
+/* 标题：“登录” */
+.box h2{
+    margin: 0 0 30px;
+    padding: 0;
+    color: #1f4e5f;
+    text-align: center;/* 文本水平对齐方式 */
+}
+/* 文本框：账号名、密码 */
+.box .frm_font{
+    position: relative;/* 相对位置 */
+}
+/* 输入框：账号名、密码 */
+.box .frm_font input{
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #3e4149;/* 输入框跳动的竖杆 */
+    margin-bottom: 30px;/* 边框底部与下一行的间距 */
+    outline: none;/*#024959 solid 1px;*//* 边框：颜色 实线 线粗 */
+    background: transparent;
+}
+/* 标签：账号名、密码 */
+.box .frm_font label{
+    position: absolute;/* 绝对位置 */
+    top: -35px;
+    left: 0;
+    padding: 10px 0;
+    font-size: 15px;
+    color: #35876C;
+    pointer-events: none;
+    transition: .5s;
+}
+/*.box .frm_font input:focus~label,
+.box .frm_font input:valid~label{
+    top: -35px;!* -18 *!
+    left: 0;
+    color: #fbd14b;!*#79a8a9;*!
+    font-size: 17px;!* 12 *!
+}*/
+.box input[type='submit']{
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #03738C;
+    padding: 10px 20px;
+    font-size: 17px;
+    border-radius: 10px;
+    cursor: pointer;
+    top: 50%;
+    left: 50%;
+}
